@@ -19,9 +19,9 @@ const SignupScreen = ({ navigation }) => {
       const response = await api.register(body);
 
       if (response.success || response?.data?.success) {
-        AsyncStorage.setItem("userData", JSON.stringify(response.data));
+        // AsyncStorage.setItem("userData", JSON.stringify(response.data));
         setTimeout(() => {
-          navigation.replace("Home");
+          navigation.goBack();
         }, 2000);
       } else {
         console.log("error");
